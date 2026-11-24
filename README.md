@@ -31,7 +31,7 @@ python make_figures_ru.py fig_ru results.json # рисунки (PNG, рус.)
 mkdir -p tables && python make_tables.py fig/summary.json tables   # таблицы LaTeX
 ```
 
-Начальное значение генератора случайных чисел — 2026, поэтому все числа воспроизводятся точно.
+Начальное значение генератора случайных чисел — 2026. С версиями библиотек из статьи (NumPy 2.5, SciPy 1.18, scikit-learn 1.9) все числа воспроизводятся точно. В других окружениях, например в Google Colab, результаты детекторов по остаткам могут немного отличаться (пороги примерно на 1 %, задержки до 0,4 сут) из-за различий в вычислениях с плавающей точкой; выводы при этом не меняются.
 
 ## Файлы
 
@@ -46,7 +46,7 @@ mkdir -p tables && python make_tables.py fig/summary.json tables   # табли�
 
 ## English
 
-Open simulator of a variable-speed centrifugal pump with three gradually developing faults and a Monte Carlo comparison (1,600 runs) of five anomaly detectors at a common calibrated false-alarm probability of 10% per 20 days. Raw-signal rules (3σ, Tukey fences, KDE quantiles) are effectively blind to impeller wear and clogging; an EWMA of regression residuals on the operating regime detects them with median delays of 3.1 and 1.1 days. Run the Colab notebook or the commands above (Python 3, seed 2026).
+Open simulator of a variable-speed centrifugal pump with three gradually developing faults and a Monte Carlo comparison (1,600 runs) of five anomaly detectors at a common calibrated false-alarm probability of 10% per 20 days. Raw-signal rules (3σ, Tukey fences, KDE quantiles) are effectively blind to impeller wear and clogging; an EWMA of regression residuals on the operating regime detects them with median delays of 3.1 and 1.1 days. Run the Colab notebook or the commands above (Python 3, seed 2026). Numbers are exactly reproducible with the library versions listed in the paper; in other environments (e.g. Google Colab) the residual-detector results may differ slightly because of floating-point differences, without changing the conclusions.
 
 ## Лицензия / License
 
